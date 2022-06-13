@@ -1,12 +1,10 @@
 body {
     background-color: rgb(185, 131, 237)
 }
+
 .start-div {
     font-family: panton;
     color: white;
-    font-size: var(--fontSizes-h3);
-    line-height: var(--lineHeights-h3);
-    font-weight: var(--fontWeights-9);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,12 +20,12 @@ h2 {
 }
 
 .musical-image {
-    display: flex;
-    flex-direction: row;
-    flex-shrink: inherit;
-}
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+}        
 
-.button-play-now {
+.game-start-button {
     background: #92196c;
     color: white;
     border-style: outset;
@@ -39,4 +37,18 @@ h2 {
     font-weight: bold;
     align-self: center;
     border-radius: 10px; 
+}
+
+.game-div {
+    font-family: panton;
+    color: white;
+    font-size: var(--fontSizes-h3);
+    line-height: var(--lineHeights-h3);
+    font-weight: var(--fontWeights-9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
