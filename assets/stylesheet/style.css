@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(185, 131, 237)
+}
+.start-div {
+    font-family: panton;
+    color: white;
+    font-size: var(--fontSizes-h3);
+    line-height: var(--lineHeights-h3);
+    font-weight: var(--fontWeights-9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    font-family: panton;
+    color: white;
+    font-size: 25px;
+}
+
+.musical-image {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: inherit;
+}
+
+.button-play-now {
+    background: #92196c;
+    color: white;
+    border-style: outset;
+    border-color: #92196c;
+    height: 55px;
+    width: 130px;
+    font-family: Panton;
+    font-size: 20px;
+    font-weight: bold;
+    align-self: center;
+    border-radius: 10px; 
+}
