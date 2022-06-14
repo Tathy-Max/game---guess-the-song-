@@ -9,7 +9,7 @@
 </head>
 <body>
 
-  <section class="initial-page-section">
+  <section class="initial-page-section show">
     <div id="start-div" class="start-div">
         <!-- <div class="musical-image"><img src="./assets/images/e5d4music-theme.jpg" alt="musical-logo"></div> -->
         <h1>Let's test your musical knowledge through out musical notes hints!</h1>
@@ -18,17 +18,20 @@
     </div>
   </section>
 
-  <section class="game-section">
+  <section class="game-section hidden">
     <div id = "game-div" class = "game-div">
-        <button id="play-hint1" class="play-hint" type="button">Play Music</button>
-        <button id="play-hint2" class="play-hint" type="button">Play Hint 1</button>
-        <button id="play-hint3" class="play-hint" type="button">Show Hint 2</button>
+        <button id="play-hint1" class="play-hint" type="button">Play Hint 1</button>
+        <button id="play-hint2" class="play-hint" type="button">Play Hint 2</button>
+        <button id="play-hint3" class="play-hint" type="button">Show Hint 3</button>
         <p id="hint3"></p>
-
+    
+    <div>
         <p>Guess the Song</p>
         <input type="text" id="userInput" placeholder="Type here your song guess"/><button id="userInputButton">Send your Guess</button>
         <p id="outputAnswer"></p>
+    </div>    
     </div>
+    </section>
 
     <!-- <section class = "audios-section">
         <audio id=hint1-music1 src='./assets/musics/loveofmylife-hint2.m4a'></audio>

@@ -1,10 +1,11 @@
-//puxando a minha array de musicas
-const arrMusics = musics
-console.log(musics);
-
 // todos os documents
 const gameStartButton=document.getElementById("game-start-button")
-const gameBoard = document.getElementById("game-div");
+const initialSection=document.getElementsByClassName("initial-page-section")
+const gameBoardSection=document.getElementsByClassName("game-section")
+const hint=document.getElementById("hint3")
+
+console.log(initialSection)
+console.log(gameBoardSection)
 
 const playhint1Button=document.getElementById("play-hint1")
 const playhint2Button=document.getElementById("play-hint2")
@@ -13,31 +14,41 @@ const playhint3Button=document.getElementById("play-hint3")
 const outputAnswer=document.getElementById("outputAnswer")
 const userInputButton=document.getElementById("userInputButton")
 
+let round=0
+
 //todas as intancias
-// const game=new Game(gameBoard)
+const audio1=new Audio("./assets/musics/loveofmylife-hint1.m4a") // hint1
+const audio2=new Audio("./assets/musics/loveofmylife-hint2.m4a") // hint2
 
-const audio1=new Audio("./assets/musics/loveofmylife-hint1.m4a")
-const audio2=new Audio("./assets/musics/loveofmylife-hint2.m4a")
+let audio3=new Audio(musics[round].hint1)
+let audio4=new Audio(musics[round].hint2)
+let song=musics[round].songName
 
-//  todos os events
+//todos os events
 gameStartButton.addEventListener('click', () => {
-  game.showGameSection()
+  initialSection[0].classList.remove("show")
+  initialSection[0].classList.add("hidden")
+
+  gameBoardSection[0].classList.remove("hidden")
+  gameBoardSection[0].classList.add("show")
+
+  nextSong(round)
 })  
 
-function showGameSection() {
-  game.style="none";
-}    
 
-function showGameSection() {
-  document.getElementById("game-div").style.display;
+function nextSong(index) {
+  audio3=new Audio(musics[index].hint1)
+  audio4=new Audio(musics[index].hint2)
   
-}  
+  song=musics[index].songName
+}
+console.log(musics[0].hint1)
 
 playhint1Button.addEventListener('click', () => {
-  audio1.play()
+  audio3.play()
 }) 
 playhint2Button.addEventListener('click', () => {
-  audio2.play()
+  audio4.play()
 }) 
 playhint3Button.addEventListener('click', () => {
   // console.log('testando')
@@ -45,24 +56,33 @@ playhint3Button.addEventListener('click', () => {
 }) 
 
 function displayHint3(){
-  document.getElementById("hint3").innerHTML = "One of the most desired feelings in the world + The opposite of death";
+  hint.innerText=musics[round].hint3
 }
-
 let song1='LOVE OF MY LIFE'
 
+let inputCounter=[];
 userInputButton.addEventListener('click', () => {
   let input=document.getElementById("userInput").value;
-  if(input.toUpperCase()===song1) {
-    outputAnswer.innerText=`You guessed right, the song is ${song1}`
+  
+
+  if (inputCounter.length<2 && input.toUpperCase() === song1) {
+    (outputAnswer.innerText=`You rock! The song is ${song1}`);
+    //console.log(inputCounter)
+  }
+  else if (inputCounter.length<2 && input.toUpperCase() !== song1) { 
+    (outputAnswer.innerText="Try it again!");
+    //console.log(input)
   }
   else {
-    (outputAnswer.innerText="Try it again!")}
-}) 
-
-
-
-
-
+    userInputButton.hidden=true;
+    (outputAnswer.innerText="Sorry! You guessed wrong");
+    console.log("acabou a chance ")
+  }  
+  inputCounter.push(input)
+  //console.log(inputCounter)
+});  
+  
+    
 
 
 // function playMusic(event) {
