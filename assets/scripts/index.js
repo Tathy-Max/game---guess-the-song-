@@ -67,7 +67,8 @@ userInputButton.addEventListener('click', () => {
   
   if (inputCounter.length<2 && input.toUpperCase() === song) {
     (outputAnswer.innerText=`You rock! The song is ${song}`);
-    round+=1
+    nextSongButton.addEventListener('click', () => {
+      nextSong(round+=1)})
     
     //console.log(inputCounter)
     //console.log(round)
@@ -80,7 +81,8 @@ userInputButton.addEventListener('click', () => {
     userInputButton.hidden=true; //userInputButton.setAttribute("disabled", true);
     (outputAnswer.innerText=`Sorry! You guessed wrong, the song is ${song}`);
     //console.log("acabou a chance ")
-    round+=1
+    nextSongButton.addEventListener('click', () => {
+      nextSong(round+=1)})
   }  
   inputCounter.push(input)
   //console.log(inputCounter)
