@@ -1,89 +1,134 @@
 body {
-    background-color: rgb(185, 131, 237)
+    background-color: rgb(43, 147, 226);
 }
 
-.start-div {
-    font-family: panton;
+div {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    height: 50vh;
+}
+.logo {
+    height: 50vh; 
+    width: 70vh;   
+}
+.initial-page-section {
+    font-family: 'Segoe UI';
     color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
+    height: 100vh;    
 }
-
-h2 {
-    font-family: panton;
+h1 {
+    font-family: 'Segoe UI';
     color: white;
-    font-size: 25px;
+    font-size: 22px;
 }
-
-.musical-image {
-    width: 200px;
-    height: 100px;
-    margin: 0 auto;
-}        
-
+h2 {
+    font-family: 'Segoe UI';
+    color: white;
+    font-size: 28px;
+}
+p {
+    font-family: 'Segoe UI';
+    color: rgb(43, 147, 226);
+    font-size: 28px; 
+    font-weight: bold
+}
 .game-start-button {
-    background: #92196c;
+    background: #db3f1c;
     color: white;
     border-style: outset;
-    border-color: #92196c;
+    border-color: #eb5533;
     border-radius: 10px;
     height: 55px;
-    width: 130px;
-    font-family: Panton;
+    width: 170px;
+    font-family: 'Segoe UI';
     font-size: 25px;
     font-weight: bold;
     align-self: center;
 }
-
-.game-div {
-    font-family: panton;
+.game-section {
+    font-family: 'Segoe UI';
     color: white;
-    font-size: var(--fontSizes-h3);
-    line-height: var(--lineHeights-h3);
-    font-weight: var(--fontWeights-9);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     text-align: center;
     margin-top: 100px;
     margin-bottom: 100px;
-      
+    height:50vh;      
 }
-
+.input-section {
+    font-family: 'Segoe UI';
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    height:50vh;      
+}
 .play-hint {
     border-radius: 12px;
     border-style: outset;
-    border-color: #92196c;
-    background: #92196c;
+    border-color:#e36144;
+    background: #e24f1e;
     color: white;
-    font-family: Panton;
-    font-size: 25px;
+    font-family: 'Segoe UI';
+    font-size: 27px;
     font-weight: bold;
-    height: 70px;
-    width: 170px;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    height: 80px;
+    width: 160px;
+    margin-top: 100px 20px 30px 20px;
+    padding-inline: 10px;
+   
 }
-
 #userInputButton {
     border-radius: 12px;
     border-style: outset;
-    border-color: violet;
-    background: violet;
+    border-color: rgb(77, 160, 223);
+    background: rgb(62, 100, 227);
     color: white;
-    font-family: Panton;
-    font-size: 25px;
+    font-family: 'Segoe UI';
+    font-size: 22px;
     font-weight: bold;
-    height: 70px;
+    height: 47px;
+    width: 150px;
+}
+#userInput {
+    height: 43px;
+    width: 250px;
+    border-radius: 12px;
+}
+#nextSong {
+    border-radius: 12px;
+    border-style: outset;
+    border-color: rgb(77, 160, 223);
+    background: rgb(62, 100, 227);
+    color: white;
+    font-family: 'Segoe UI';
+    font-size: 22px;
+    font-weight: bold;
+    height: 55px;
     width: 170px;
 }
-
-#userInput {
-    height: 70px;
+#backTobegin a {
+    color: white;
+    text-decoration: none;
+}
+#backTobegin {
+    border-radius: 12px;
+    border-style: outset;
+    background-color: red;
+    border-color: red;
+    font-family: 'Segoe UI';
+    font-size: 19px;
+    font-weight: bold;
+    height: 55px;
     width: 170px;
 }
 

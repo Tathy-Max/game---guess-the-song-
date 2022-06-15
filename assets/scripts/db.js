@@ -14,10 +14,10 @@ const musics = [
       hint3: 'Treat that every child likes + Action of spending money',
     },
     {
-        songName: 'GAROTA DE IPANEMA',
-        songArtist: 'tom jobim',
-        hint1: './assets/musics/garotadeipanema-hint1.m4a',
-        hint2: './assets/musics/garotadeipanema-hint2.m4a',
-        hint3: 'The opposite of boy + Beautiful beach in Brazil',
+      songName: 'GAROTA DE IPANEMA',
+      songArtist: 'tom jobim',
+      hint1: './assets/musics/garotadeipanema-hint1.m4a',
+      hint2: './assets/musics/garotadeipanema-hint2.m4a',
+      hint3: 'The opposite of boy + Beautiful beach in Brazil',
       }
 ];
