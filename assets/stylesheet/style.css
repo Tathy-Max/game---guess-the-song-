@@ -1,41 +1,12 @@
-/* background-image: url("../images/istockphoto-165746240-612x612.jpg");
-background-size: contain;  */
-/* rgb(43, 147, 226) */
-
 body {
     background-color:#DE84FB;
-}
-#site{
-    width:1300px;
-    height:700px;
-    margin-top:0;
-    margin-left:auto;
-    margin-bottom:0;
-    margin-right:auto;
-    background-color: #DE84FB;
-}
-/* #header{
-    width:1000px;
-    height:100px;
-    background-color:#00F;
-} */
-#container{
-    height:100vh;
-    background-color: rgb(224, 107, 242);
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center; */
-}
-/* #footer{
-    width:1000px;
-    height:100px;
-    background-color:#C3C;
-} */
-.initial-page-section {
     font-family: 'Segoe UI';
+}
+.initial-page-section {
+    background-color: rgb(224, 107, 242) ;
     color: white;
-    height: 100vh;
+    border-radius: 14px;
+    margin: 41px 226px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,57 +14,10 @@ body {
 }
 #imageLogo {
     background-color: rgb(224, 107, 242);
+    border-radius: 14px;
     display: flex;
     flex-direction: row;
-}
-#game-div{
-    width:1000px;
-    height:250px;
-    float:left;
-    background: yellow;
-    border: #DE84FB;
-    border-radius: 10%;
-    border-style: solid, bold;
-    display: flex;
-    justify-content: space-between, center;
-}   
-#input{
-    width:1000px;
-    height:250px;
-    float:left;
-    background-color:#F00;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
-
-div {
-    display: flex;
     justify-content: center;
-    background-color: white;
-    height: 50vh;   
-}
-.logo {
-    height: 50vh; 
-    width: 70vh;   
-}
-
-h1 {
-    font-family: 'kenzo';
-    color: white;
-    font-size: 22px;
-}
-h2 {
-    font-family: 'Segoe UI';
-    color: black;
-    font-size: 28px;
-    padding: 15px 40px 15px 40px;
-}
-p {
-    font-family: 'Segoe UI';
-    color: rgb(43, 147, 226);
-    font-size: 28px; 
-    font-weight: bold
 }
 .game-start-button {
     background: rgb(228, 38, 168);
@@ -102,66 +26,136 @@ p {
     border-color: violet;
     box-shadow: rgb(157 33 92) 0px 5px;
     border-radius: 10px;
-    height: 55px;
-    width: 170px;
-    font-family: 'Segoe UI';
-    font-size: 25px;
+    padding: 10px 37px;
+    font-size: 22px;
     font-weight: bold;
     align-self: center;
+    margin-bottom: 25px;
 }
 .game-start-button:hover {
     background-color: rgb(179, 37, 179);
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-}    
+}  
 .game-section {
-    font-family: 'Segoe UI';
     color: white;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    height:50vh;      
-}
-.input-section {
-    font-family: 'Segoe UI';
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
-    height:50vh;
-}   
-.play-hint {
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}  
+.game-div{
+    width:1000px;
+    height:300px;
+    margin: 41px 226px;
+    background: rgb(224, 107, 242);
+    border: #DE84FB;
     border-radius: 12px;
-    border-style: outset;
-    border-color:#e36144;
-    background: #e24f1e;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 30px 10px 30px 10px;
+}   
+.imagePlay {
+    width: 240px;
+    height: 240px;
+}
+#buttons-div {
+    background: #03C2DE;
+    border-radius: 12px;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap: 20px;
+    /* padding: 40px 10px 40px 10px; */
+}
+.play-hint {
+    height: 60px;
+    width: 150px;
+    /* padding: 10px 20px 10px 20px; */
+    background: rgb(228, 38, 168);
     color: white;
-    font-family: 'Segoe UI';
-    font-size: 27px;
+    border-style: outset;
+    border-color: violet;
+    box-shadow: rgb(157 33 92) 0px 5px;
+    border-radius: 12px;
+    /* padding: 10px 37px; */
+    padding-inline: 10px;
+    font-size: 22px;
     font-weight: bold;
-    height: 80px;
-    width: 160px;
-    padding-inline: 10px;       
+    align-self: center;
+    margin: 5px;
 }
 .play-hint:hover {
     background-color: rgb(179, 37, 179);
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }    
+#hint3-div {
+    background: #03C2DE;
+    border-radius: 12px;
+}
+#input{
+    width:1000px;
+    height:100px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+#continue-div {
+    width:1000px;
+    height:100px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 20px;
+    
+    /* height: 50vh;    */
+}
+.logo {
+    height: 297px;
+    /* width: 70vh;    */
+}
+
+h1 {
+    color: white;
+    font-size: 22px;
+}
+h2 {
+    color: black;
+    font-size: 27px;
+    padding: 15px 40px 15px 40px;
+}
+p {
+    color: black;
+    font-size:22px; 
+    font-weight: bold
+}
+
+/* .input-section {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    /* margin-top: 100px;
+    margin-bottom: 100px;
+    height:50vh; */
+/* }    */ */
 #userInputButton {
     border-radius: 12px;
     border-style: outset;
     border-color: rgb(77, 160, 223);
     background: rgb(62, 100, 227);
     color: white;
-    font-family: 'Segoe UI';
     font-size: 22px;
     font-weight: bold;
     height: 47px;
@@ -172,11 +166,11 @@ p {
     width: 250px;
     border-radius: 12px;
 }
-#nextSong {
+.nextSong {
     border-radius: 12px;
     border-style: outset;
     border-color: rgb(77, 160, 223);
-    background: rgb(62, 100, 227);
+    background: #03C2DE;
     color: white;
     font-family: 'Segoe UI';
     font-size: 22px;
@@ -184,22 +178,30 @@ p {
     height: 55px;
     width: 170px;
 }
+.next-song:hover {
+    background-color: rgb(179, 37, 179);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}    
 #backTobegin a {
     color: white;
     text-decoration: none;
 }
-#backTobegin {
+.backTobeginButton {
     border-radius: 12px;
     border-style: outset;
-    background-color: red;
-    border-color: red;
-    font-family: 'Segoe UI';
+    background-color: orangered;
+    border-color: orange;
     font-size: 19px;
     font-weight: bold;
     height: 55px;
     width: 170px;
 }
-
+.backTobeginButton:hover {
+    background-color: orange;
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
 .hidden {
     display: none;
 }

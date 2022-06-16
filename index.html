@@ -4,46 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess the Song</title>
     <link rel="stylesheet" href="./assets/stylesheet/style.css"/>
+    <title>Guess the Song</title>    
 </head>
 <body>
-<div id="site">
-    <!-- <div id="header"></div> -->
-  <div id="container">
 
-  <section class="initial-page-section show">
-        <div id="imageLogo"><img class="logo" src="./assets/images/logo macaco.jpeg" alt="game-logo"></div><br>
+    <section class="initial-page-section show">
+        <div id="imageLogo"><img class="logo" src="./assets/images/logo macaco.jpeg" alt="game-logo"></div>
         <h1>Let's test your musical knowledge through out musical notes hints!</h1>
-        <h2>Guess the song is a game that gives you hints to find out the song. Ready?!</h2>
-        <button id="game-start-button" class="game-start-button" type="button">Start</button>
-  </section>          
+        <h2>Guess the song is a game that gives you hints to find out the song's name. Ready?!</h2>
+        <button id="game-start-button" class="game-start-button" type="button">Play Now</button>
+    </section>          
 
-  <section class="game-section hidden">
-    <!-- <span><img class="logo" src="./assets/images/logo.jpeg" alt="game-logo"></span> -->
-    <div id="game-div" class="game-div"> <!-- div id left--> 
-        <video width="320" height="240" autoplay>
-            <source src="./assets/images/VIDEO-2022-06-15-12-59-34.mp4" type="video/mp4">
-            <!-- <source src="movie.ogg" type="video/ogg"> -->
-            Your browser does not support the video tag.
-        </video>
-        <button id="play-hint1" class="play-hint" type="button">Play Hint 1</button>
-        <button id="play-hint2" class="play-hint" type="button">Play Hint 2</button>
-        <button id="play-hint3" class="play-hint" type="button">Show Hint 3</button>
-        
-    </div>
-    <p id="hint3"></p>
-    <div id="input" class="input"> <!-- div id righ-->
-        <p>What's your guess?</p>
-        <input type="text" id="userInput" placeholder="Type here your song guess"/><button id="userInputButton">Send</button>
-        <p id="outputAnswer"></p>
-        <button id="nextSong" class="nextSongButton" type="button">Next Song</button>
-        <button id="backTobegin" class="backTobeginButton" type="button"><a href="./index.html">Back to begin</a></button>
-    </div>  
+    <section class="game-section hidden">
+        <div id="game-div" class="game-div"> <!-- div id left--> 
+            <div id="imagePlay"><img class="imagePlay" src="./assets/images/logo play.jpeg" alt="play-logo"></div>
+            <div><video width="320" height="240" autoplay>
+                <source src="./assets/images/VIDEO-2022-06-15-12-59-34.mp4" type="video/mp4">
+                Sorry, probably your browser doesn't support this tag.
+                </video></div>
+      
+            <div id="buttons-div">  
+                <button id="play-hint1" class="play-hint" type="button">Play Hint 1</button>
+                <button id="play-hint2" class="play-hint" type="button">Play Hint 2</button>
+                <button id="play-hint3" class="play-hint" type="button">Show Hint 3</button> 
+                <div id="hint3-div"><p id="hint3"></p></div>
+            </div>       
+        </div>
+
+        <div id="input" class="input"> <!-- div id righ-->
+            <p>What's your guess?</p>
+            <input type="text" id="userInput" placeholder="Type here your song guess"/><button id="userInputButton">Send</button>
+            <p id="outputAnswer"></p>
+        </div>
+        <div id="continue-div">   
+            <button id="nextSong" class="nextSongButton" type="button">Next Song</button>
+            <button id="backTobegin" class="backTobeginButton" type="button"><a href="./index.html">Back to begin</a></button>
+        </div>  
     </section>
-    </div>
-</div>
-    
+   
     <script src="./assets/scripts/db.js"></script>
     <script src="./assets/scripts/index.js"></script>
 </body>
