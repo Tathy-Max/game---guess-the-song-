@@ -7,6 +7,8 @@ const hint=document.getElementById("hint3")
 const playhint1Button=document.getElementById("play-hint1")
 const playhint2Button=document.getElementById("play-hint2")
 const playhint3Button=document.getElementById("play-hint3")
+// const playhint2ButtonHidden=document.getElementsByClassName("play-hint")
+// const playhint3ButtonHidden=document.getElementsByClassName("play-hint")
 const nextSongButton=document.getElementById("nextSong")
 
 const outputAnswer=document.getElementById("outputAnswer")
@@ -28,8 +30,15 @@ let song=musics[round].songName
 function nextSong(index) {
   audio3=new Audio(musics[index].hint1)
   audio4=new Audio(musics[index].hint2)
+  audioOriginal=new Audio(musics[index].originalMusic)
   
   song=musics[index].songName
+
+  // input.reset()
+  // outputAnswer.reset()
+  // hint.reset()
+  // inputCounter.reset()
+
 }
 //console.log(musics[0].hint1)
 
@@ -49,13 +58,17 @@ gameStartButton.addEventListener('click', () => {
 })  
 
 playhint1Button.addEventListener('click', () => {
-  audio3.play()
+  audio3.play();
+  playhint2Button.classList.remove("hidden")
+  playhint2Button.classList.add("show")
 }) 
 playhint2Button.addEventListener('click', () => {
   audio4.play()
+  playhint3Button.classList.remove("hidden")
+  playhint3Button.classList.add("show")
 }) 
 playhint3Button.addEventListener('click', () => {
-  // console.log('testando')
+  console.log('testando')
   return displayHint3();
 }) 
 
@@ -67,6 +80,9 @@ userInputButton.addEventListener('click', () => {
   
   if (inputCounter.length<2 && input.toUpperCase() === song) {
     (outputAnswer.innerText=`You rock! The song is ${song}`);
+    // userInputButton.addEventListener('click', () => {
+      audioOriginal.play()
+    // }) 
     nextSongButton.addEventListener('click', () => {
       nextSong(round+=1)})
     
@@ -81,6 +97,7 @@ userInputButton.addEventListener('click', () => {
     userInputButton.hidden=true; //userInputButton.setAttribute("disabled", true);
     (outputAnswer.innerText=`Sorry! You guessed wrong, the song is ${song}`);
     //console.log("acabou a chance ")
+    audioOriginal.play()
     nextSongButton.addEventListener('click', () => {
       nextSong(round+=1)})
   }  
