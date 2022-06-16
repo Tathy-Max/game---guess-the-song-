@@ -3,6 +3,7 @@ const gameStartButton=document.getElementById("game-start-button")
 const initialSection=document.getElementsByClassName("initial-page-section")
 const gameBoardSection=document.getElementsByClassName("game-section")
 const hint=document.getElementById("hint3")
+const userInput=document.getElementById("userInput")
 
 const playhint1Button=document.getElementById("play-hint1")
 const playhint2Button=document.getElementById("play-hint2")
@@ -28,19 +29,16 @@ let song=musics[round].songName
 
 // all functions
 function nextSong(index) {
+  console.log(index)
+
   audio3=new Audio(musics[index].hint1)
   audio4=new Audio(musics[index].hint2)
   audioOriginal=new Audio(musics[index].originalMusic)
   
   song=musics[index].songName
-
-  // input.reset()
-  // outputAnswer.reset()
-  // hint.reset()
-  // inputCounter.reset()
-
 }
-//console.log(musics[0].hint1)
+
+  
 
 function displayHint3(){
   hint.innerText=musics[round].hint3
@@ -72,40 +70,59 @@ playhint3Button.addEventListener('click', () => {
   return displayHint3();
 }) 
 
-//let song1='LOVE OF MY LIFE'
-
 let inputCounter=[];
+
+// eventlistner do botao check
 userInputButton.addEventListener('click', () => {
   let input=document.getElementById("userInput").value;
-  
-  if (inputCounter.length<2 && input.toUpperCase() === song) {
-    (outputAnswer.innerText=`You rock! The song is ${song}`);
-    // userInputButton.addEventListener('click', () => {
-      audioOriginal.play()
-    // }) 
-    nextSongButton.addEventListener('click', () => {
-      nextSong(round+=1)})
-    
-    //console.log(inputCounter)
-    //console.log(round)
-  }
-  else if (inputCounter.length<2 && input.toUpperCase() !== song) { 
-    (outputAnswer.innerText="Try it again!");
-    //console.log(input)
-  }
-  else {
-    userInputButton.hidden=true; //userInputButton.setAttribute("disabled", true);
-    (outputAnswer.innerText=`Sorry! You guessed wrong, the song is ${song}`);
-    //console.log("acabou a chance ")
-    audioOriginal.play()
-    nextSongButton.addEventListener('click', () => {
-      nextSong(round+=1)})
-  }  
   inputCounter.push(input)
-  //console.log(inputCounter)
-  //return nextSong(round)  ???
+  
+  
+  console.log(round)
+  console.log(inputCounter)
+
+  if (inputCounter.length<=3 && input.toUpperCase() === song) { //if se a resposta esta correta
+    outputAnswer.innerText=`You rock! The song is ${song}`
+    userInputButton.hidden=true; 
+    audioOriginal.play()
+    
+    
+    nextSongButton.addEventListener('click', () => { //eventlistner do botao nextsong
+      console.log("clicou no botao next 1")
+      audioOriginal.pause() 
+      reset()     
+      nextSong(round+=1)})
+  }
+  else if (inputCounter.length<=3 && input.toUpperCase() !== song) { //if se a resposta esta errada mas ainda tem vida
+    if (inputCounter.length === 3) { //na terceira tentativa 
+      userInputButton.hidden=true; 
+      outputAnswer.innerText=`Sorry! You guessed wrong, the song is ${song}`
+      audioOriginal.play()    
+      
+      nextSongButton.addEventListener('click', () => { //eventlistner do botao nextsong
+        console.log("clicou no botao next 2")
+        audioOriginal.pause()
+        reset()
+        nextSong(round+=1)
+      })
+    return
+    }
+
+    outputAnswer.innerText="Try it again!"
+    setTimeout(() => {
+    outputAnswer.innerText=""
+    },1500);
+  }
+  
+  userInput.value=""
 });  
   
+function reset () { //seta tudo para a proxima rodada
+  inputCounter=[]
+  outputAnswer.innerText=""
+  userInput.value=""
+  userInputButton.hidden=false
+}
     
 
 

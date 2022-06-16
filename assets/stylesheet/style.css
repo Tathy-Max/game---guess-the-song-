@@ -32,12 +32,6 @@ h2 {
     font-size: 27px;
     padding: 15px 40px 15px 40px;
 }
-.hidden {
-    display: none;
-}
-.show {
-    display: flex;
-}
 .game-start-button {
     background: rgb(228, 38, 168);
     color: white;
@@ -83,15 +77,17 @@ h2 {
 #buttons-div {
     background: #03C2DE;
     border-radius: 12px;
+    display: flex;
     flex-direction: row;
     flex-grow: 1;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-content: flex-start;
 }
 .play-hint {
-    height: 60px;
-    width: 150px;
+    height: 49px;
+    width: 143px;
     background: rgb(228, 38, 168);
     color: white;
     border-style: outset;
@@ -100,11 +96,11 @@ h2 {
     border-radius: 12px;
     padding: 14px 37px;
     padding-inline: 10px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     align-self: center;
-    margin-top: 28px;
-    margin-left: 10px;
+    margin-top: 23px;
+    margin-left: 17px;
 }
 .play-hint:hover {
     background-color: rgb(179, 37, 179);
@@ -114,7 +110,7 @@ h2 {
 #hint3-div {
     background: #03C2DE;
     border-radius: 12px;
-    margin-top: 10px;
+    margin-top: 19px;
     margin-left: 30px;
     margin-right: 30px;
 
@@ -141,6 +137,21 @@ p {
     justify-content: center;
     padding: 20px 10px;
 }
+#inputGuess-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+#outputNext-div {
+    background: #03C2DE;
+    border-radius: 12px;
+    display: block;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px 50px 20px 50px ;
+}
 #userInput {
     height: 40px;
     width: 200px;
@@ -165,7 +176,7 @@ p {
 }  
 #outputAnswer {
     color: purple;
-    font-size: 25px; 
+    font-size: 23px; 
     font-weight: bold;
 }
 #continue-div {
@@ -189,8 +200,8 @@ p {
     border-radius: 12px;
     font-size: 19px;
     font-weight: bold;
-    height: 55px;
-    width: 170px;
+    height: 50px;
+    width: 160px;
 }
 .nextSongButton:hover {
     background-color: rgb(179, 37, 179);
@@ -215,4 +226,10 @@ p {
     background-color: rgb(228, 38, 168);
     color: white;
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.hidden {
+    display: none;
+}
+.show {
+    display: flex;
 }

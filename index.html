@@ -17,7 +17,7 @@
     </section>          
 
     <section class="game-section hidden">
-        <div id="game-div" class="game-div"> <!-- div id left--> 
+        <div id="game-div" class="game-div"> 
             <div id="imagePlay"><img class="imagePlay" src="./assets/images/logo play.jpeg" alt="play-logo"></div>
             <div><video width="250" height="240" autoplay>
                 <source src="./assets/images/VIDEO-2022-06-15-12-59-34.mp4" type="video/mp4">
@@ -31,14 +31,18 @@
                 <div id="hint3-div"><p id="hint3"></p></div>
             </div>       
         </div>
-        <div id="input" class="input"> <!-- div id righ-->
-            <p>What's the song's name?</p>
-            <input type="text" id="userInput" placeholder="Type here your song guess"/><br><button id="userInputButton">Send</button><br>
-            <p id="outputAnswer"></p>
-            <button id="nextSong" class="nextSongButton" type="button">Next Song</button>
+        <div id="input" class="input">
+            <div id="inputGuess-div"> 
+                <p>What's the song's name?</p>
+                <input type="text" id="userInput" placeholder="Type here your song guess"/><br><button id="userInputButton">Check</button>
+            </div>
+            <div id="outputNext-div">  
+                <p id="outputAnswer"></p>
+                <button id="nextSong" class="nextSongButton" type="button">Next Song</button>
+            </div>
         </div>
-        <div id="continue-div">   
             
+        <div id="continue-div">   
             <button id="backTobegin" class="backTobeginButton" type="button"><a href="./index.html">Back to begin</a></button>
         </div>  
     </section>

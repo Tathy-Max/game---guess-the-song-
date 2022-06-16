@@ -11,7 +11,7 @@ const musics = [
       songName: 'CANDY SHOP',
       songArtist: '50 cent',
       hint1: './assets/musics/candyShopHint1.m4a',
-      hint2: './assets/musics/candyShopHint2.m4a',
+      hint2: './assets/musics/canduShopHint2.m4a',
       hint3: 'Treat that every child likes + Action of spending money',
       originalMusic: './assets/musics/Candy shop.m4a',
     },
