@@ -70,6 +70,16 @@ playhint3Button.addEventListener('click', () => {
   return displayHint3();
 }) 
 
+
+nextSongButton.addEventListener('click', () => { //eventlistner do botao nextsong
+  console.log("clicou no botao next 1")
+  audioOriginal.pause() 
+  reset()     
+  nextSong(round+=1)
+})
+
+
+
 let inputCounter=[];
 
 // eventlistner do botao check
@@ -77,43 +87,25 @@ userInputButton.addEventListener('click', () => {
   let input=document.getElementById("userInput").value;
   inputCounter.push(input)
   
-  
-  console.log(round)
-  console.log(inputCounter)
-
   if (inputCounter.length<=3 && input.toUpperCase() === song) { //if se a resposta esta correta
     outputAnswer.innerText=`You rock! The song is ${song}`
     userInputButton.hidden=true; 
     audioOriginal.play()
-    
-    
-    nextSongButton.addEventListener('click', () => { //eventlistner do botao nextsong
-      console.log("clicou no botao next 1")
-      audioOriginal.pause() 
-      reset()     
-      nextSong(round+=1)})
   }
-  else if (inputCounter.length<=3 && input.toUpperCase() !== song) { //if se a resposta esta errada mas ainda tem vida
-    if (inputCounter.length === 3) { //na terceira tentativa 
-      userInputButton.hidden=true; 
-      outputAnswer.innerText=`Sorry! You guessed wrong, the song is ${song}`
-      audioOriginal.play()    
+    else if (inputCounter.length<=3 && input.toUpperCase() !== song) { //if se a resposta esta errada mas ainda tem vida
       
-      nextSongButton.addEventListener('click', () => { //eventlistner do botao nextsong
-        console.log("clicou no botao next 2")
-        audioOriginal.pause()
-        reset()
-        nextSong(round+=1)
-      })
-    return
-    }
+      if (inputCounter.length === 3) { //na terceira tentativa 
+        userInputButton.hidden=true; 
+        outputAnswer.innerText=`Sorry! You guessed wrong, the song is ${song}`
+        audioOriginal.play()    
+        return
+      }
 
-    outputAnswer.innerText="Try it again!"
-    setTimeout(() => {
-    outputAnswer.innerText=""
-    },1500);
-  }
-  
+      outputAnswer.innerText="Try it again!"
+      setTimeout(() => {
+      outputAnswer.innerText=""
+      },1500);
+    }
   userInput.value=""
 });  
   
