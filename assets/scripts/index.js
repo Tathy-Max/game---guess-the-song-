@@ -12,6 +12,7 @@ const outputAnswer=document.getElementById("outputAnswer")
 const nextSongButton=document.getElementById("nextSong")
 const score=document.getElementById("score")
 const turn=document.getElementById("turn")
+const gameDiv=document.getElementById("game-div")
 const inputDiv=document.getElementById("input")
 const gameOverScreen=document.getElementById("gameOver")
 const winScreen=document.getElementById("winScreen")
@@ -47,11 +48,15 @@ function reset () { //clean up for next round
   userInputButton.hidden=false
 }
 function gameOver() {
+  gameDiv.classList.add("hidden")
   inputDiv.classList.add("hidden")
   gameOverScreen.classList.remove("hidden")
+  winScreen.classList.add("hidden")
 }
 function winGame() {
+  gameDiv.classList.add("hidden")
   inputDiv.classList.add("hidden")
+  gameOverScreen.classList.add("hidden")
   winScreen.classList.remove("hidden")
 }
 // eventListeners
@@ -116,7 +121,7 @@ userInputButton.addEventListener('click', () => { //eventListener check button
       outputAnswer.innerText="Try it again!"
       setTimeout(() => {
       outputAnswer.innerText=""
-      },1500);
+      },1300);
     }
   userInput.value=""
   if (pontos<=0) {
