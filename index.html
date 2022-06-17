@@ -37,14 +37,29 @@
                 <input type="text" id="userInput" placeholder="Type here your song guess"/><br><button id="userInputButton">Check</button>
             </div>
             <div id="outputNext-div">  
-                <p id="outputAnswer"></p>
-                <button id="nextSong" class="nextSongButton" type="button">Next Song</button>
+                
+                    <p id="outputAnswer"></p>
+                    <button id="nextSong" class="nextSongButton" type="button">Next Song</button>
+               
+                
             </div>
         </div>
             
         <div id="continue-div">   
             <button id="backTobegin" class="backTobeginButton" type="button"><a href="./index.html">Back to begin</a></button>
-        </div>  
+            <div>
+                <p>score: <span id="score"></span></p>
+            </div>
+            <div>
+                <p>round: <span id="turn"></span>/4</p>
+            </div>
+        </div>
+        <div id="gameOver" class="hidden" >
+            <p>Game Over</p>
+        </div>
+        <div id="winScreen" class="hidden" >
+            <p>Congratulations!</p>
+        </div>
     </section>
    
     <script src="./assets/scripts/db.js"></script>

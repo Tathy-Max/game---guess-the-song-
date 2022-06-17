@@ -182,14 +182,14 @@ p {
 #continue-div {
     width: 1000px;
     height: 55px;
-    /* background: #03C2DE; */
     background-color: #FFBD5C;
     border-radius: 12px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     margin-top: 10px;
     padding: 10px 10px;
+    align-items: center;
 }
 .nextSongButton {
     background: rgb(228, 38, 168);

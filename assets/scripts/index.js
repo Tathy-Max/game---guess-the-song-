@@ -4,6 +4,10 @@ const initialSection=document.getElementsByClassName("initial-page-section")
 const gameBoardSection=document.getElementsByClassName("game-section")
 const hint=document.getElementById("hint3")
 const userInput=document.getElementById("userInput")
+const score=document.getElementById("score")
+const turn=document.getElementById("turn")
+const gameOverScreen=document.getElementById("gameOver")
+const winScreen=document.getElementById("winScreen")
 
 const playhint1Button=document.getElementById("play-hint1")
 const playhint2Button=document.getElementById("play-hint2")
@@ -11,6 +15,7 @@ const playhint3Button=document.getElementById("play-hint3")
 // const playhint2ButtonHidden=document.getElementsByClassName("play-hint")
 // const playhint3ButtonHidden=document.getElementsByClassName("play-hint")
 const nextSongButton=document.getElementById("nextSong")
+const inputDiv=document.getElementById("input")
 
 const outputAnswer=document.getElementById("outputAnswer")
 const userInputButton=document.getElementById("userInputButton")
@@ -18,6 +23,10 @@ const userInputButton=document.getElementById("userInputButton")
 
 // all variables
 let round=0
+turn.innerText=(round+1)
+let inputCounter=[];
+let pontos=100
+score.innerText=pontos
 
 // all instances
 let audio3=new Audio(musics[round].hint1)
@@ -30,6 +39,10 @@ let song=musics[round].songName
 // all functions
 function nextSong(index) {
   console.log(index)
+  if (index===4) {
+    winGame()
+    return
+  }
 
   audio3=new Audio(musics[index].hint1)
   audio4=new Audio(musics[index].hint2)
@@ -59,14 +72,19 @@ playhint1Button.addEventListener('click', () => {
   audio3.play();
   playhint2Button.classList.remove("hidden")
   playhint2Button.classList.add("show")
+  pontos-=10
+  score.innerText=pontos
 }) 
 playhint2Button.addEventListener('click', () => {
   audio4.play()
   playhint3Button.classList.remove("hidden")
   playhint3Button.classList.add("show")
+  pontos-=10
+  score.innerText=pontos
 }) 
 playhint3Button.addEventListener('click', () => {
-  console.log('testando')
+  pontos-=10
+  score.innerText=pontos
   return displayHint3();
 }) 
 
@@ -76,14 +94,25 @@ nextSongButton.addEventListener('click', () => { //eventlistner do botao nextson
   audioOriginal.pause() 
   reset()     
   nextSong(round+=1)
+  turn.innerText=(round+1)
+  hint.innerText=""
+
+  console.log(round)
+  
 })
 
 
 
-let inputCounter=[];
+
 
 // eventlistner do botao check
 userInputButton.addEventListener('click', () => {
+  
+
+
+
+
+
   let input=document.getElementById("userInput").value;
   inputCounter.push(input)
   
@@ -91,13 +120,17 @@ userInputButton.addEventListener('click', () => {
     outputAnswer.innerText=`You rock! The song is ${song}`
     userInputButton.hidden=true; 
     audioOriginal.play()
+    pontos+=20
+    score.innerText=pontos   
   }
     else if (inputCounter.length<=3 && input.toUpperCase() !== song) { //if se a resposta esta errada mas ainda tem vida
       
       if (inputCounter.length === 3) { //na terceira tentativa 
         userInputButton.hidden=true; 
         outputAnswer.innerText=`Sorry! You guessed wrong, the song is ${song}`
-        audioOriginal.play()    
+        audioOriginal.play() 
+        pontos-=10
+        score.innerText=pontos   
         return
       }
 
@@ -107,6 +140,11 @@ userInputButton.addEventListener('click', () => {
       },1500);
     }
   userInput.value=""
+
+  if (pontos<=0) {
+    gameOver()
+  }
+
 });  
   
 function reset () { //seta tudo para a proxima rodada
@@ -115,6 +153,17 @@ function reset () { //seta tudo para a proxima rodada
   userInput.value=""
   userInputButton.hidden=false
 }
+
+function gameOver() {
+  inputDiv.classList.add("hidden")
+  gameOverScreen.classList.remove("hidden")
+}
+
+function winGame() {
+  inputDiv.classList.add("hidden")
+  winScreen.classList.remove("hidden")
+}
+console.log(inputDiv)
     
 
 
