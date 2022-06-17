@@ -8,22 +8,22 @@
     <title>Guess the Song</title>    
 </head>
 <body>
-
     <section class="initial-page-section show">
-        <div id="imageLogo"><img class="logo" src="./assets/images/logo macaco.jpeg" alt="game-logo"></div>
-        <h1>Let's test your musical knowledge through out musical notes hints!</h1>
+        <div id="imageLogo"><img class="logo" src="./assets/images/logo macaco.jpeg" alt="game-logo">
+        </div>
+        <h1>Let's test your musical knowledge throughout musical notes hints!</h1>
         <h2>Guess the song is a game that gives you hints to find out the song's name. Ready?!</h2>
         <button id="game-start-button" class="game-start-button" type="button">Play Now</button>
-    </section>          
-
+    </section>    
     <section class="game-section hidden">
         <div id="game-div" class="game-div"> 
-            <div id="imagePlay"><img class="imagePlay" src="./assets/images/logo play.jpeg" alt="play-logo"></div>
+            <div id="imagePlay"><img class="imagePlay" src="./assets/images/logo play.jpeg" alt="play-logo">
+            </div>
             <div><video width="250" height="240" autoplay>
                 <source src="./assets/images/VIDEO-2022-06-15-12-59-34.mp4" type="video/mp4">
                 Sorry, probably your browser doesn't support this tag.
-                </video></div>
-      
+                </video>
+            </div>      
             <div id="buttons-div">  
                 <button id="play-hint1" class="play-hint" type="button">Play Hint 1</button>
                 <button id="play-hint2" class="play-hint hidden" type="button">Play Hint 2</button>
@@ -33,35 +33,30 @@
         </div>
         <div id="input" class="input">
             <div id="inputGuess-div"> 
-                <p>What's the song's name?</p>
+                <p id="guessAsk">What's the song's name?</p>
                 <input type="text" id="userInput" placeholder="Type here your song guess"/><br><button id="userInputButton">Check</button>
             </div>
             <div id="outputNext-div">  
-                
-                    <p id="outputAnswer"></p>
-                    <button id="nextSong" class="nextSongButton" type="button">Next Song</button>
-               
-                
+                <p id="outputAnswer"></p>
+                <button id="nextSong" class="nextSongButton" type="button">Next Song</button>
             </div>
         </div>
-            
         <div id="continue-div">   
-            <button id="backTobegin" class="backTobeginButton" type="button"><a href="./index.html">Back to begin</a></button>
+            <button id="backTobegin" class="backTobeginButton" type="button"><a href="./index.html">Start Over</a></button>
             <div>
-                <p>score: <span id="score"></span></p>
+                <p>Score: <span id="score"></span></p>
             </div>
             <div>
-                <p>round: <span id="turn"></span>/4</p>
+                <p>Round: <span id="turn"></span>/4</p>
             </div>
         </div>
-        <div id="gameOver" class="hidden" >
+        <div id="gameOver" class="hidden">
             <p>Game Over</p>
         </div>
-        <div id="winScreen" class="hidden" >
-            <p>Congratulations!</p>
+        <div id="winScreen" class="hidden">
+            <p>You Won!</p>
         </div>
     </section>
-   
     <script src="./assets/scripts/db.js"></script>
     <script src="./assets/scripts/index.js"></script>
 </body>
