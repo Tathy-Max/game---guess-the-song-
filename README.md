@@ -1,4 +1,4 @@
-Guess the Song - The Game
+# Guess the Song - The Game
 
 The “Guess the Song” is a game built as the first project  of the Ironhack Full Stack Web Development Bootcamp.
 
@@ -6,6 +6,7 @@ The “Guess the Song” is a game built as the first project  of the Ironhack F
 # Links
 
 Deploy link - https://tathy-max.github.io/game---guess-the-song-/
+
 Presentation link - https://www.canva.com/design/DAFD0ShZFI8/8GRXX1BRYlMBwWJV6r-2eA/view?utm_content=DAFD0ShZFI8&utm_campaign=designshare&utm_medium=link&utm_source=publishpresent
 
 ## The mechanics
@@ -25,4 +26,4 @@ JavaScript, HTML and CSS were used to build the game without additional framewor
 
 ## Special Thanks
 
-My special thanks go to the Ironhack teaching staff who helped me all along with the project: Karen Okasaki, Anna Reis, and Alexandre Lima. Thanks to my family for supporting in all kinds of ways. Also, thanks to all my classmates, especially Tulio Minini.
+My special thanks go to the Ironhack teaching staff who helped me all along with the project: Karen Okasaki, Anna Reis, and Alexandre Lima. Thanks to my family for supporting me in all kinds of ways. Also, thanks to all my classmates, especially Tulio Minini.
